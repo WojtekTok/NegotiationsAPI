@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/NegotiationsAPI/src/NegotiationsAPI.Infrastructure/Migrations
