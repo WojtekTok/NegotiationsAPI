@@ -44,9 +44,8 @@ namespace NegotiationsAPI.Api.Controllers
 
             if (result.Succeeded)
             {
-                // Generuj token JWT
                 var user = await _userManager.FindByEmailAsync(model.Email);
-                var token = GenerateJwtToken(user); // Implementacja tej metody została omówiona wcześniej
+                var token = GenerateJwtToken(user);
                 return Ok(new { Token = token });
             }
             return Unauthorized();
