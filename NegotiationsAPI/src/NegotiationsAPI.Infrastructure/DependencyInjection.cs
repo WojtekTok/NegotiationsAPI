@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using NegotiationsAPI.Core.Interfaces;
 using NegotiationsAPI.Infrastructure.Services;
+using NegotiationsAPI.Infrastructure.Repositories;
 
 namespace NegotiationsAPI.Infrastructure
 {
@@ -19,6 +20,7 @@ namespace NegotiationsAPI.Infrastructure
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }
