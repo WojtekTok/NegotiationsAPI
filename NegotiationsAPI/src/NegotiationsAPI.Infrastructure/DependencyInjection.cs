@@ -2,6 +2,8 @@
 using NegotiationsAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using NegotiationsAPI.Core.Interfaces;
+using NegotiationsAPI.Infrastructure.Services;
 
 namespace NegotiationsAPI.Infrastructure
 {
@@ -14,6 +16,7 @@ namespace NegotiationsAPI.Infrastructure
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUserService, UserService>();
 
             return services;
         }
