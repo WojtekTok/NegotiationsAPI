@@ -21,6 +21,7 @@ namespace NegotiationsAPI.Infrastructure
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<INegotiationsRepository, NegotiationsRepository>();
 
             return services;
         }
